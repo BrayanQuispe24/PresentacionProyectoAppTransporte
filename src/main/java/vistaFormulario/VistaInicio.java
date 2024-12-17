@@ -4,6 +4,7 @@
  */
 package vistaFormulario;
 
+import Negocio.App;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -98,7 +99,6 @@ public class VistaInicio extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
       //  jLabel1.setText("mostrar la otra pantalla");
-      
       Vista2 form2= new Vista2();
       form2.setVisible(true);
       this.setVisible(false);

@@ -26,7 +26,7 @@ public class FlujosEncomiendas extends javax.swing.JFrame {
     FordFulkerson2 mapaFlujos;
     DigrafoPesado<Ciudad> mapaOriginal;
     
-    public FlujosEncomiendas(Vista2 aThis, App appTransporte) {
+    public FlujosEncomiendas(Vista2 aThis) {
         this.anterior = aThis;
         initComponents();
         redimensionarObj();
@@ -285,11 +285,10 @@ public class FlujosEncomiendas extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            Vista2 anterior = new Vista2();
-            App appTransporte = new App();
-            
+            Vista2 anterior = new Vista2();  
+            @Override
             public void run() {
-                new FlujosEncomiendas(anterior, this.appTransporte).setVisible(true);
+                new FlujosEncomiendas(anterior).setVisible(true);
             }
         });
     }

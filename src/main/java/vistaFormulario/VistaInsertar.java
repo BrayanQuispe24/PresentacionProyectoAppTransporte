@@ -244,6 +244,7 @@ public class VistaInsertar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        vistaAnterior.appTransporte=this.appTransporte;
         vistaAnterior.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -257,6 +258,7 @@ public class VistaInsertar extends javax.swing.JFrame {
             Ciudad destino = new Ciudad(nombreDestino);
             double distancia = Double.parseDouble(jTextField4.getText());
             this.appTransporte.grafoFlujosinsertarArista(origen, destino, distancia);
+            JOptionPane.showMessageDialog(null, "Tramo insertado exitosamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se pudo insertar el tramo, verificar ciudades");
         }
@@ -268,7 +270,7 @@ public class VistaInsertar extends javax.swing.JFrame {
             String nombreCiudad = jTextField1.getText().trim();
             Ciudad nuevaCiudad = new Ciudad(nombreCiudad);
             this.appTransporte.insertarVertice(nuevaCiudad);
-            JOptionPane.showMessageDialog(null, this.appTransporte.mostrarGrafoCiudad());
+            JOptionPane.showMessageDialog(null, "Ciudad registrada exitosamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ciudad ya existente");
         }
@@ -282,6 +284,7 @@ public class VistaInsertar extends javax.swing.JFrame {
             Ciudad origen = new Ciudad(nombreOrigen);
             Ciudad destino = new Ciudad(nombreDestino);
             this.appTransporte.eliminarTramo(origen, destino);
+            JOptionPane.showMessageDialog(null, "Tramo eliminado exitosamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al eliminar tramo");
         }
@@ -293,6 +296,7 @@ public class VistaInsertar extends javax.swing.JFrame {
             String ciudadAEliminar = jTextField1.getText().trim();
             Ciudad ciudadAEliminarF = new Ciudad(ciudadAEliminar);
             this.appTransporte.eliminarCiudad(ciudadAEliminarF);
+            JOptionPane.showMessageDialog(null,"Ciudad eliminada exitosamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al eliminar una ciudad");
         }
